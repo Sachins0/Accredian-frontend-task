@@ -65,7 +65,7 @@ const FormComponent = ({closeReferralForm}) => {
         }
       } catch (error) {
         console.error('Error:', error);
-        toast.error(error.message || 'Something went wrong. Please try again.');
+        toast.error(error.response.data.message || error.message || 'Something went wrong. Please try again.');
       } finally {
         setLoading(false);
       }
