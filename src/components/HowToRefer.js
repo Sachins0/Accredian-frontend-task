@@ -50,9 +50,9 @@ const HowToRefer = ({ openReferralForm }) => {
       </h2>
 
       <div className="relative">
-      <div className="flex justify-between w-full z-8 md:absolute top-20 left-9">
+      <div className="flex justify-between w-full md:w-[53rem] z-8 md:absolute top-16 left-24">
           {steps.map((step, index) => (
-            <div key={index} className="flex flex-col items-center text-center">
+            <div key={index} className="flex flex-col items-center text-center md:m-9">
               <div className="w-12 flex items-center justify-center mb-3">
                 {step.icon}
               </div>
@@ -60,7 +60,7 @@ const HowToRefer = ({ openReferralForm }) => {
             </div>
           ))}
         </div>
-        <div className='w-[60rem] md:block hidden '>
+        <div className='w-[65rem] md:block hidden'>
           <img src={howReferImg} alt="How to refer" loading='lazy' />
         </div>
       </div>

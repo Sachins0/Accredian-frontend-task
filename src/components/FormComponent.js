@@ -3,6 +3,7 @@ import { X, Send} from 'lucide-react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
+import { programsData } from '../utils/categories';
 
 const FormComponent = ({closeReferralForm}) => {
   const [loading, setLoading] = useState(false);
@@ -199,9 +200,11 @@ const FormComponent = ({closeReferralForm}) => {
                     disabled={loading}
                   >
                     <option value="">Select a program</option>
-                    <option value="web-development">Web Development</option>
-                    <option value="data-science">Data Science</option>
-                    <option value="mobile-development">Mobile Development</option>
+                    {programsData.map((program) => (
+                      <option key={program.id} value={program.name}>
+                        {program.name}
+                      </option>
+                    ))}
                   </select>
                   {errors.program && (
                     <p className="text-red-500 text-sm mt-1">{errors.program}</p>
